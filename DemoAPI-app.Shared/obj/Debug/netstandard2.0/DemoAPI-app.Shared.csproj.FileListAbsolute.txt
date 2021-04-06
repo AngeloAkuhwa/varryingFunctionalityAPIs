@@ -1,0 +1,9 @@
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\bin\Debug\netstandard2.0\DemoAPI-app.Shared.deps.json
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\bin\Debug\netstandard2.0\DemoAPI-app.Shared.dll
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\bin\Debug\netstandard2.0\DemoAPI-app.Shared.pdb
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\obj\Debug\netstandard2.0\DemoAPI-app.Shared.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\obj\Debug\netstandard2.0\DemoAPI-app.Shared.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\obj\Debug\netstandard2.0\DemoAPI-app.Shared.AssemblyInfo.cs
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\obj\Debug\netstandard2.0\DemoAPI-app.Shared.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\obj\Debug\netstandard2.0\DemoAPI-app.Shared.dll
+C:\Users\hp\source\repos\DemoAPI-app\DemoAPI-app.Shared\obj\Debug\netstandard2.0\DemoAPI-app.Shared.pdb
