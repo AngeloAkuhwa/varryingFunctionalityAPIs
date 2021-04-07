@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
@@ -28,6 +29,8 @@ namespace DemoAPI_app.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            var user = User.FindFirst(ClaimTypes.NameIdentifier).Value;
+          
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

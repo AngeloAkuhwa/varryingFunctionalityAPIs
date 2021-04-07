@@ -9,6 +9,7 @@ using DemoAPI_app.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
 namespace DemoAPI_app.Service
@@ -19,29 +20,22 @@ namespace DemoAPI_app.Service
         private readonly SignInManager<IdentityUser> _signInMgr;
         private readonly IConfiguration _configuration;
 
-        public UserService(UserManager<IdentityUser> userMgr, SignInManager<IdentityUser> signInMgr, IConfiguration configuration)
+        public UserService(IServiceProvider serviceProvider)
         {
-            _userMgr = userMgr;
-            _signInMgr = signInMgr;
-            _configuration = configuration;
+            _userMgr = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+            _signInMgr = serviceProvider.GetRequiredService<SignInManager<IdentityUser>>();
+            _configuration = serviceProvider.GetRequiredService<IConfiguration>();
         }
 
         public async Task<UsermanagerResponseDTO> RegisterUserAsync(RegisterDTO model)
         {
-            if (model == null)
-            {
-                throw new NullReferenceException("All fields are required");
-            }
+            if (model == null) return new UsermanagerResponseDTO() { Message = "All fields are required" };
 
-            if (model.Password != model.ConfirmPassword)
-            {
+            if (model.Password != model.ConfirmPassword) 
                 return new UsermanagerResponseDTO
                 {
-                    Message = "Confirm password doesn't match password",
-                    IsSuccessful = false,
-                        
+                    Message = "Confirm password doesn't match password", IsSuccessful = false,
                 };
-            }
 
             var user = new IdentityUser()
             {
@@ -68,7 +62,7 @@ namespace DemoAPI_app.Service
             };
         }
 
-        public async Task<UsermanagerResponseDTO> ChangePasswordAsync(ChangePasswordDTO model)
+        public async Task<UsermanagerResponseDTO> ChangeUserPasswordAsync(ChangePasswordDTO model)
         {
             if (model == null)
             {

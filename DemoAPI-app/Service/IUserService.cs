@@ -9,7 +9,7 @@ namespace DemoAPI_app.Service
     public interface IUserService
     {
         Task<UsermanagerResponseDTO> RegisterUserAsync(RegisterDTO model);
-        Task<UsermanagerResponseDTO> ChangePasswordAsync(ChangePasswordDTO model);
+        Task<UsermanagerResponseDTO> ChangeUserPasswordAsync(ChangePasswordDTO model);
         Task<UsermanagerResponseDTO> LoginUserAsync(LoginDTO model);
     }
 }
